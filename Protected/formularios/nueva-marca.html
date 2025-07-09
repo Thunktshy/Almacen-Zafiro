@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Nueva Marca</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- External Styles -->
+  <link rel="stylesheet" href="/admin-resources/styles/admin.css">
+  <link rel="stylesheet" href="/admin-resources/styles/formularios.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-light">
+   <!-- Integrated Fixed Header -->
+   <header class="site-header">
+    <div class="header-container">
+      <!-- Company Info on Top -->
+      <div class="company-info">
+        <a href="#" class="company-logo fade-in" aria-label="Company Logo"></a>
+        <a href="#" class="company-name fade-in">Zafiro Home Construcciones</a>
+      </div>
+      <!-- Navigation Wrapper Below Company Info -->
+    </div>
+    <nav class="navigation-primary">
+      <ul class="navigation-links-list">
+        <li class="navigation-item slide-in">
+          <a class="navigation-link hover-effect" href="/admin-resources/paneles-administracion/panel-productos.html">
+            <span class="link-text fade-in">PRODUCTOS</span>
+          </a>
+        </li>
+        <li class="navigation-item slide-in">
+          <a class="navigation-link hover-effect" href="/admin-resources/paneles-administracion/panel-almacen.html">
+            <span class="link-text fade-in">ALMACÉN</span>
+          </a>
+        </li>
+        <li class="navigation-item slide-in">
+          <a class="navigation-link hover-effect" href="/admin-resources/paneles-administracion/panel-usuarios.html">
+            <span class="link-text fade-in">USUARIOS</span>
+          </a>
+        </li>
+        <li class="navigation-item hamburger-item">
+          <span class="hamburger" onclick="openSidebar()">
+            <i class="fas fa-bars"></i>
+          </span>
+        </li>
+      </ul>
+    </nav>
+    
+      
+  </header>
+
+  <!-- Sidebar for Navigation (Right side) -->
+  <div id="mySidebar" class="sidebar" >
+    <span class="closebtn" onclick="closeSidebar()">&times;</span>
+    <a href="/admin" onclick="closeSidebar()">MENÚ PRINCIPAL</a>
+    <a href="/admin-resources/Consultas/ver-productos.html" onclick="closeSidebar()">Consultar Productos</a>
+    <a href="../Public/index.html" onclick="logout(); closeSidebar()">Cerrar sesión</a>
+  </div>
+  
+  <main class="formulario">
+    <div class="Form-container">
+      <h2 class="form-title">Agregar Marca</h2>
+      <form class="form" id="marcaForm">
+        <div class="form-field mb-3">
+          <label for="marcaNombre" class="form-label">Escribe el nombre de la marca:</label>
+          <input class="form-input form-control" type="text" id="marcaNombre" placeholder="Ejemplo: Marca XYZ" required>
+        </div>
+        <button type="submit" id="submitMarcaForm" class="form-submit btn btn-primary">Guardar Marca</button>
+      </form>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-container text-center py-3 bg-dark text-white">
+      <p>© 2025 Zafiro Home Products.</p>
+    </div>
+  </footer>
+  
+
+  <!-- External Scripts -->
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/animations.js"></script>
+  <script type="module" src="../scripts/Formularios/formulario-marcas.js" defer></script>
+  <!-- Sidebar and Logout Scripts -->
+  <script>
+    function openSidebar() {
+      document.getElementById("mySidebar").style.width = "300px";
+    }
+    
+    function closeSidebar() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+    function logout() {
+      fetch('/logout', { method: 'POST' })
+        .then(response => response.json())
+        .then(result => {
+          if (result.success) {
+            window.location.href = '/index.html';
+          } else {
+            console.log('Error al cerrar sesión.');
+          }
+        })
+        .catch(error => {
+          console.error('Error during logout:', error);
+        });
+    }
+  </script>
+</body>
+</html>

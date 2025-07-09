@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zafiro Home Construcciones - Página Principal</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Variables globales */
+:root {
+  --color-text-light: rgb(255, 255, 255);
+  --color-primary: rgb(45,71,120); 
+  --color-secondary: rgb(100,140,188);
+  --max-width-container: 1200px;
+  --spacing-standard: 1rem;
+}
+
+
+
+/* Barra de navegación principal */
+.navigation-primary {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-standard) 2rem;
+  z-index: 1000;
+  transition: background-color .3s ease;
+}
+
+/* Contenedor para alinear logo y enlaces */
+.navigation-container {
+  max-width: 1200px; /* Increased max-width for better layout */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Space between company info and navigation menu */
+  align-items: center;
+}
+
+/* Cambios al fondo al hacer scroll */
+.navigation-primary.scrolled {
+  background-color: var(--color-primary);
+  transition: background-color 1s ease;
+}
+
+.scrolled {
+  background-color: var(--color-primary);
+  transition: background-color 1s ease;
+}
+
+.company-info {
+  display: flex; /* Use flexbox to align items in a row */
+  align-items: center; /* Center items vertically */
+}
+
+/* Logo como imagen de fondo */
+.company-logo {
+  background-image: url('../images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 160px; /* Adjust width as needed */
+  height: 60px; /* Adjust height as needed */
+  display: block;
+}
+
+/* Nombre de la empresa */
+.company-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text-light);
+  text-align: left; /* Align text to the left */
+  text-decoration: none;
+  padding-left: 20px; /* Space between logo and company name */
+}
+
+/* Menú de navegación */
+.navigation-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* Lista de enlaces */
+.navigation-links-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem; /* Space between navigation items */
+}
+
+/* Elementos individuales del menú */
+.navigation-item {
+  margin: 0;
+}
+
+/* Estilo de los enlaces */
+.navigation-link {
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.1s ease;
+}
+
+/* Hover de enlaces */
+.navigation-link:hover {
+  color: var(--color-primary); /* Color amarillo de acento */
+}
+/* Sección Hero */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--color-text-light);
+  text-align: center;
+  transition: background-image 1s ease-in-out;
+  background-image: url('/Public/images/silder-images/hero-background (1).jpg'); /* Imagen inicial */
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgb(100,140,188,.5);
+  z-index: 0;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width-container);
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-size: 7rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.button-primary-cta {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.1s ease;
+}
+
+.button-primary-cta:hover {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
+
+.services-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: var(--color-primary);
+  display: inline-block; /* So the border width matches the content */
+  padding-bottom: 0.5rem; /* Adjust spacing between text and line */
+  border-bottom: 4px solid var(--color-primary); /* Replace blue with a variable if needed */
+}
+
+/* Contenedor de servicios */
+.services-container {
+  margin: 0 auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+/* Grid de servicios */
+.services-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 2rem 0;
+  min-height: 500px;
+}
+
+/* Tarjetas individuales */
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  min-width: 350px;
+  max-width: 350px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-header {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.service-icon i {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #eee;
+}
+
+/* Ajuste para scroll horizontal en móviles */
+@media (max-width: 1200px) {
+  .services-container {
+    overflow-x: auto;
+    padding: 0 1rem;
+  }
+  
+  .services-grid {
+    padding: 2rem 1rem;
+    justify-content: flex-start;
+    min-width: min-content;
+  }
+}
+
+/* Footer Styles */
+.footer-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 4rem 0;
+}
+
+.footer-container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.map-section h2 {
+  color: var(--color-text-light);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 1rem;
+}
+
+.map-container {
+  flex-grow: 1;
+  min-height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.company-info-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  height: auto;
+  min-height: 450px;
+  text-align: center;
+}
+
+.company-info-container h2 {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 1rem;
+}
+
+.company-info-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.company-info-container li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.company-info-container i {
+  width: 24px;
+  margin-right: 1rem;
+  color: var(--color-secondary);
+}
+
+.company-info-container a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.company-info-container a:hover {
+  color: var(--color-secondary);
+}
+
+.contact-form-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.contact-section-title {
+  color: var(--color-text-light);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form .form-label {
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form .form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-light);
+  padding: 0.8rem;
+}
+
+.contact-form .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-secondary);
+  box-shadow: none;
+}
+
+.contact-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form .btn-primary {
+  background-color: var(--color-secondary);
+  border: none;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-primary);
+}
+
+/* Estilos para los botones de contacto */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.contact-button {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-button h3 {
+  color: var(--color-text-light);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.btn-contact {
+  width: 100%;
+  padding: 1rem;
+  color: var(--color-text-light);
+  background-color: var(--color-secondary);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-contact i {
+  margin: 0;
+}
+
+.btn-contact span {
+  flex: 1;
+  text-align: center;
+}
+
+/* Estilos para el correo copiable */
+.email-copy-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.email-text {
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.copy-tooltip {
+  position: absolute;
+  background: var(--color-secondary);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.email-copy-container:hover .copy-tooltip {
+  opacity: 1;
+}
+
+/* Sección Sobre Nosotros */
+.about-section {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.about-container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-description {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  color: var(--color-text-light);
+  min-width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-item i {
+  font-size: 2.5rem;
+  color: var(--color-secondary);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .about-stats {
+    gap: 2rem;
+  }
+  
+  .stat-item {
+    min-width: 150px;
+    padding: 1.5rem;
+  }
+}
+
+/* Estilos para el modal */
+.modal-content {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 12px;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+}
+
+.modal-header .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-title {
+  color: var(--color-text-light);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal .contact-form .form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-light);
+  padding: 1rem;
+}
+
+.modal .contact-form .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-secondary);
+  box-shadow: none;
+}
+
+.modal .contact-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.modal .contact-form .form-label {
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.modal .contact-form .btn-primary {
+  background-color: var(--color-secondary);
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.modal .contact-form .btn-primary:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-primary);
+}
+
+/* Animación del modal */
+.modal.fade .modal-dialog {
+  transform: scale(0.8);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+/* =========================
+   Table Elements Styling
+   ========================= */
+
+/* Responsive table container */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Base table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Table caption styling (if needed) */
+table caption {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Styling for table header */
+thead {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+thead th {
+  padding: 1rem;
+  border-bottom: 2px solid var(--color-secondary);
+  text-align: left;
+}
+
+/* Styling for table body cells */
+tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  width: 25%; /* Adjust this value as per your layout */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* Alternating row background for better readability */
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+}
+
+/* Optional: border for the entire table */
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+#productList {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%; /* Ensure the list container takes full width */
+}
+
+li {
+  width: 100%; /* Ensure each row takes the full width of the parent */
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* Ensures content inside aligns properly */
+  justify-content: center; /* Center the text */
+  align-items: center; /* Center items vertically */
+  text-align: center;
+}
+
+li:hover {
+  background-color: #e9ecef; /* Lighter gray on hover */
+}
+
+.categories-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.categories-container {
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+.categories-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding: 2rem 0;
+}
+
+.category-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  min-width: 200px;
+  max-width: 250px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-header {
+  cursor: pointer;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.category-icon i {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-align: center;  /* Centers the text horizontally */
+}
+
+.category-image {
+  width: 25%;
+  height: 40%;
+  object-fit: cover;
+  border-bottom: 2px solid #eee;
+  padding: 20px;
+  display: block;       /* Ensures margin: auto works */
+  margin-left: auto;    /* Centers horizontally */
+  margin-right: auto;   /* Centers horizontally */
+}
+
+.category-body {
+  display: none;
+  padding: 1rem;
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.category-body ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.category-body li {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.category-card.active .category-body {
+  display: block;
+}
+
+.focused-card {
+  position: relative;
+  width: 1000px;
+  max-width: 95vw;
+  margin: 2rem auto;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  padding: 2.5rem;
+  gap: 3rem;
+}
+
+.focused-card .category-header {
+  flex: 0 0 40%;
+  padding: 0;
+}
+
+.focused-card .category-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: none;
+}
+
+.focused-card .category-body {
+  flex: 1;
+  display: block;
+  padding: 0;
+  background-color: transparent;
+}
+
+.focused-card .category-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.focused-card .category-icon {
+  display: none;
+}
+
+.focused-card .category-body ul {
+  padding-left: 1.2rem;
+}
+
+.focused-card .category-body li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.categories-grid.focus-mode {
+  overflow: hidden;
+}
+
+.categories-grid.focus-mode .category-card:not(.focused-card) {
+  display: none;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+/* Retrasos escalonados para elementos en secuencia */
+.navigation-links-list .navigation-item:nth-child(1) { transition-delay: 0.1s; }
+.navigation-links-list .navigation-item:nth-child(2) { transition-delay: 0.2s; }
+.navigation-links-list .navigation-item:nth-child(3) { transition-delay: 0.3s; }
+.navigation-links-list .navigation-item:nth-child(4) { transition-delay: 0.4s; }
+
+/* Retrasos para elementos del hero */
+.hero-content-container .hero-title { transition-delay: 0.3s; }
+.hero-content-container .hero-description { transition-delay: 0.5s; }
+.hero-content-container .button-primary-cta { transition-delay: 0.7s; }
+
+/* Retrasos para las tarjetas de servicios */
+.services-grid .service-card:nth-child(1) { transition-delay: 0.1s; }
+.services-grid .service-card:nth-child(2) { transition-delay: 0.2s; }
+.services-grid .service-card:nth-child(3) { transition-delay: 0.3s; }
+.services-grid .service-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* Retrasos para los botones de contacto */
+.contact-buttons .contact-button:nth-child(1) { transition-delay: 0.1s; }
+.contact-buttons .contact-button:nth-child(2) { transition-delay: 0.2s; }
+.contact-buttons .contact-button:nth-child(3) { transition-delay: 0.3s; }
+
+
+
+
+/* Button Styles */
+.btn-regresar,
+.btn-submit {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-regresar:hover,
+.btn-submit:hover {
+  background-color: var(--color-primary);
+}
+
+/* Grid Styles for Dimension and Weight Inputs */
+.grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/*Styles for formularios*/
+
+body.formulario {
+  background-color: rgb(100, 140, 188); /* Set background color */
+  /* Add any other styles you want to apply */
+}
+
+main.formulario {
+  margin-top: 60px; /* Space between navbar and form */
+}
+.navigation-primary-forms {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-secondary); /* Adjust as needed */
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .grid {
+      flex-direction: column; /* Stack inputs on smaller screens */
+  }
+}
+
+.registrar-link {
+  color: white; /* Set text color to white */
+  text-decoration: none; /* Optional: remove underline */
+}
+.registrar-link:hover {
+  text-decoration: underline; /* Optional: underline on hover */
+}
+
+.error-message{
+  display: none; /* Hidden by default */
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+/* Alert  to warn user of errors */
+
+.alert {
+  display: none; /* Hidden by default */
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert.active {
+  display: block; /* Show the alert when active */
+  opacity: 1; /* Fully visible */
+  transition: opacity 0.5s ease; /* Transition for fading */
+}
+
+.alert.fade-out {
+  opacity: 0; /* Fade out effect */
+}
+
+
+/*Styles for experiencia*/
+
+/* Experience Section */
+.experience-section {
+  padding: 1rem 2rem;
+  padding-bottom: 4rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.experience-container {
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.experience-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.experience-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  min-width: 450px;
+  max-width: 500px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.experience-summary {
+  display: flex;
+  padding: var(--spacing-standard);
+  flex-direction: column;
+  align-items: center; /* Opcional, para centrar horizontalmente */
+  gap: 1rem;         /* Espacio entre elementos (ajusta según convenga) */
+}
+
+
+.experience-title {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.experience-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.experience-summary img {
+  width: 400px;
+  height: 300px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.toggle-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: var(--color-secondary);
+}
+
+.experience-details {
+  padding: var(--spacing-standard);
+  background-color: #fff;
+  text-align: left;
+  border-top: 1px solid #eee;
+  display: none; /* Initially hidden; shown when focused */
+}
+
+.experience-details h2 {
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-details p,
+.experience-details ul {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.experience-details ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Focus Mode Styling */
+.focus-mode .experience-card {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.focus-mode .experience-card.focused-card {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.carousel-item img {
+  max-width: 400px;
+  max-height: 500px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;  /* adjust as needed */
+  height: 30px; /* adjust as needed */
+  background: rgba(0, 0, 0, 0.5); /* optional for visibility */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-prev {
+  left: 10px;  /* adjust to position inside the image */
+}
+
+.carousel-control-next {
+  right: 10px; /* adjust to position inside the image */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px;  /* adjust icon size */
+  height: 20px; /* adjust icon size */
+}
+
+.carousel-inner {
+  width: auto; /* or 100% if you prefer */
+  margin: 0 auto; 
+  position: relative;
+}
+
+.mb-4{
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto !important;
+}
+
+.celaya-title {
+  color:  var(--color-primary);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.dep-title{
+  padding-top: 30px;
+  padding-bottom: 5px;
+  color:  var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.Agencias-title{
+  color:  var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+.sanjeronimo-title{
+  color:  var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+
+
+.proyectos-text li{
+  color:  var(--color-text-light);
+}
+
+.proyectos-text li:hover {
+  color: var(--color-primary);
+}
+
+/* ============================================
+   Ajustes de desplazamiento para secciones en la navegación
+   La propiedad scroll-margin-top se utiliza para agregar un espacio
+   extra en la parte superior de los elementos cuando se hace scroll hacia ellos.
+   Esto es especialmente útil cuando se utiliza una cabecera fija (fixed header)
+   que de otra manera cubriría parte del contenido.
+   ============================================ */
+
+/* Sección "Sobre Nosotros" (About Section) */
+/* Ajusta el margen superior al desplazarse para evitar que la cabecera fija cubra el contenido */
+.about-section {
+  scroll-margin-top: 80px;  /* 80px: Valor ajustado a la altura del header en esta sección */
+}
+
+/* Sección "Servicios" (Services Section) */
+/* Se requiere un margen mayor ya que la estructura de esta sección requieren un espacio adicional */
+.services-section {
+  scroll-margin-top: 130px; 
+}
+
+/* Sección "Experiencia" (Experience Section) */
+/* Ajustamos un margen superior aún mayor para secciones donde se desee destacar o separar visualmente el contenido */
+.experience-section {
+  scroll-margin-top: 150px; 
+}
+
+/* Sección "Contacto" (Footer) */
+/* Específico para el footer, garantizando que al hacer scroll hacia el final de la página,
+   el contenido de contacto no quede oculto tras la cabecera fija */
+#contacto {
+  scroll-margin-top: 80px;  /* 80px: Alineado con la altura del header para mantener la coherencia */
+}
+
+  </style>
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<section>
+<nav class="navigation-primary">
+  <div class="navigation-container">
+    <div class="company-info">
+      <div><a class="company-logo fade-in" aria-label="Company Logo"></a></div>
+      <div>
+        <a class="company-name fade-in" aria-label="Company Logo">Zafiro Home Construcciones</a>
+      </div>
+    </div>
+    <div class="navigation-menu" id="navbarNav">
+      <ul class="navigation-links-list">
+        <li class="navigation-item slide-in">
+          <a class="navigation-link hover-effect" data-bs-toggle="modal" data-bs-target="#loginmodal">
+            <span class="link-text fade-in">Iniciar sesión</span>
+          </a>
+        </li>
+        <li class="navigation-item slide-in">
+          <a class="navigation-link hover-effect" href="#quienes-somos">
+            <span class="link-text fade-in">Quiénes Somos</span>
+          </a>
+        </li>
+        <li class="navigation-item slide-in">
+          <a class="navigation-link hover-effect" href="#servicios">
+            <span class="link-text fade-in">Servicios</span>
+          </a>
+        </li>
+        <li class="navigation-item slide-in">
+          <a class="navigation-link hover-effect" href="#experiencia">
+            <span class="link-text fade-in">Experiencia</span>
+          </a>
+        </li>
+        <li class="navigation-item slide-in">
+          <a class="navigation-link hover-effect" href="#contacto" onclick="scrollToFooter(event)">
+            <span class="link-text fade-in">Contacto</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+</section>
+<section>
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-content-container">
+      <div class="hero-text-container">
+        <h1 class="hero-title fade-up">Diseño y Edificación<br> Alta y Baja Tensión</h1>
+        <p class="hero-description fade-up">Estructuras Metálicas · Cancelería · Carpintería · Plomería</p>
+      </div>
+      <a href="#servicios" class="button-primary-cta fade-up">Conoce nuestros servicios</a>
+    </div>
+  </header>
+</section>
+  <!-- Después del hero-section y antes de la sección de servicios -->
+  <section id="quienes-somos" class="about-section">
+    <div class="about-container">
+      <h2 class="section-title fade-up">Sobre Nosotros</h2>
+      <div class="about-content">
+        <div class="about-text fade-up">
+          <p class="about-description">
+            Zafiro Home Construcciones es una empresa especializada en edificación, obra civil y mantenimiento industrial y habitacional.
+          </p>
+          <p class="about-description">
+            Nos dedicamos a la construcción de estructuras metálicas, instalaciones eléctricas, hidráulicas y más.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item fade-up">
+            <i class="fas fa-building"></i>
+            <span class="stat-number">+500</span>
+            <span class="stat-label">Proyectos Completados</span>
+          </div>
+          <div class="stat-item fade-up">
+            <i class="fas fa-users"></i>
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="stat-item fade-up">
+            <i class="fas fa-handshake"></i>
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <main>
+ <!-- Sección Servicios -->
+ <section id="servicios" class="services-section">
+  <div class="services-container">
+    <h2   class="section-title">Nuestros Servicios</h2>
+    <div class="services-grid">
+      
+      <!-- Tarjeta 1 -->
+      <div class="service-card fade-up">
+        <div class="service-header">
+          <div class="service-icon">
+            <i class="fas fa-drafting-compass"></i>
+          </div>
+          <h3 class="service-title">Diseño y Cálculo de Estructuras</h3>
+          <img class="service-image" 
+               src="./images/servicios-images/calculo.jpeg" 
+               alt="Cálculo de estructuras">
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="service-card fade-up">
+        <div class="service-header">
+          <div class="service-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="service-title">Instalaciones Eléctricas e Hidrosanitarias</h3>
+          <img class="service-image" 
+               src="./images/servicios-images/instalaciones_hidrahulicas.jpg" 
+               alt="Instalaciones">
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="service-card fade-up">
+        <div class="service-header">
+          <div class="service-icon">
+            <i class="fas fa-hard-hat"></i>
+          </div>
+          <h3 class="service-title">Albañilería y Mantenimiento Industrial</h3>
+          <img class="service-image" 
+               src="./images/servicios-images/albañileria industrial.jpg" 
+               alt="Albañilería">
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="service-card fade-up">
+        <div class="service-header">
+          <div class="service-icon">
+            <i class="fas fa-window-maximize"></i>
+          </div>
+          <h3 class="service-title">Canceles, Ventanas y Estructuras Metálicas</h3>
+          <img class="service-image" 
+               src="./images/servicios-images/canceleria.jpg" 
+               alt="Canceles y ventanas">
+        </div>
+      </div>
+
+    </div> <!-- /.services-grid -->
+  </div> <!-- /.services-container -->
+</section>  
+<!-- Sección de Experiencia -->
+<section id="experiencia" class="experience-section fade-up">
+  <div class="experience-container fade-up">
+    <h2 class="section-title fade-up">Nuestra Experiencia</h2>
+    <div class="experience-grid" id="experienceGrid">
+      
+      <!-- ============ PROYECTO CELAYA (Tarjeta) ============ -->
+      <div class="experience-card fade-up" onclick="toggleExperienceFocus(event, this)">
+        <div class="experience-summary">
+          <h1 class="celaya-title">Remodelación</h1>
+
+          <img src="images/experiencia/remodelacion-celaya.jpg" alt="Remodelación y ampliación de sucursal en Celaya">
+          <button class="toggle-btn" onclick="event.stopPropagation(); toggleExperienceFocus(event, this.closest('.experience-card'));">
+            Ver Detalles
+          </button>
+        </div>
+        <div class="experience-details">
+          <h1 class="celaya-title">Celaya</h1>
+          <h2 class="celaya-remodelacion">Remodelación de fachada y Ampliación de oficinas</h2>
+          <!-- Carousel para Celaya -->
+          <div id="carouselCelaya" class="carousel slide mb-4" data-bs-ride="carousel">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselCelaya" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselCelaya" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselCelaya" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <!-- Slides -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images/experiencia/remodelacion-celaya.jpg" alt="Remodelación y ampliación de sucursal en Celaya">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/experiencia/fachada-celaya.jpg" alt="Fachada principal de la sucursal en Celaya">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/experiencia/oficinas-celaya.jpg" alt="Oficinas de la sucursal en Celaya">
+              </div>
+            </div>
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCelaya" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCelaya" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <p>Proyecto de remodelación y ampliación en la sucursal de Celaya.</p>
+        </div>
+      </div>
+      
+      <!-- ============ PROYECTO DEPARTAMENTO UNIFAMILIAR (Tarjeta) ============ -->
+      <div class="experience-card fade-up" onclick="toggleExperienceFocus(event, this)">
+        <div class="experience-summary">
+          <h1 class="dep-title">Diseño de Interiores y Ambientes Residenciales</h1>
+          <img src="images/experiencia/detalles-casa.jpg" alt="Detalles de casa habitación">
+          <button class="toggle-btn" onclick="event.stopPropagation(); toggleExperienceFocus(event, this.closest('.experience-card'));">
+            Ver Detalles
+          </button>
+        </div>
+        <div class="experience-details">
+          <h1 class="dep-title">Departamento Unifamiliar</h1>
+          <h2 class="dep-casa">Casa Habitación</h2>
+          <!-- Carousel para Departamento Unifamiliar -->
+          <div id="carouselDepto" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselDepto" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselDepto" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images/experiencia/detalles-casa.jpg" alt="Detalles de casa habitación">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/experiencia/acabados-casa.jpg" alt="Acabados de casa habitación">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepto" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselDepto" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <p class="dep-casa-text">Construcción de casa habitación en la ciudad de Celaya, Guanajuato.</p>
+          <h2 class="dep-detalles">Detalles</h2>
+          <p class="dep-detalles-text">Se realizaron trabajos de carpintería en closets y puertas.</p>
+          <h2 class="dep-acabados">Acabados</h2>
+          <p class="dep-acabados-text">Se colocaron acabados de primera calidad en pisos, muros y plafones.</p>
+        </div>
+      </div>
+      
+      <!-- ============ PROYECTO GRUPO GA3 AGENCIAS (Tarjeta) ============ -->
+      <div class="experience-card fade-up" onclick="toggleExperienceFocus(event, this)">
+        <div class="experience-summary">
+          <h1 class="Agencias-title">Diseño Exterior y Renovación de Imagen Comercial</h1>
+          <img src="images/experiencia/agencia2.jpg" alt="Agencias de autos">
+          <button class="toggle-btn" onclick="event.stopPropagation(); toggleExperienceFocus(event, this.closest('.experience-card'));">
+            Ver Detalles
+          </button>
+        </div>
+        <div class="experience-details">
+          <h1 class="Agencias-title">Grupo GA3 Agencias de autos</h1>
+          <h2 class="agencias">Agencias de autos</h2>
+          <!-- Carousel para Agencias -->
+          <div id="carouselAgencias" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselAgencias" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselAgencias" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselAgencias" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images/experiencia/agencia2.jpg" alt="Agencias de autos">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/experiencia/agencia1.jpg" alt="Proyectos de agencias de autos">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAgencias" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAgencias" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <p class="agencias-text">En este proyecto nos enfocamos en la supervisión de mantenimientos.</p>
+          <h2 class="proyectos">Proyectos</h2>
+          <ul class="proyectos-text">
+            <li>Agencia Volkswagen Santa Clara: Cambio de Imagen</li>
+            <li>Agencia Nissan Chalco: Cubierta y paso de gato</li>
+            <li>Agencia Nissan Polanco: Cambio de imagen</li>
+            <li>Agencia Nissan San Cosme: Remodelación de Taller mecánico y cambio de imagen</li>
+            <li>Agencia Nissan Atizapan: Remodelación de oficinas</li>
+          </ul>
+          <h2 class="renovacion">Renovación</h2>
+          <p class="renovacion-text">Estos fueron algunos de nuestros proyectos ejecutados.</p>
+        </div>
+      </div>
+      
+      <!-- ============ PROYECTO RESIDENCIA SAN JERÓNIMO (Tarjeta) ============ -->
+      <div class="experience-card fade-up" onclick="toggleExperienceFocus(event, this)">
+        <div class="experience-summary">
+          <h1 class="sanjeronimo-title">Construcción Residencial</h1>
+          <img src="images/experiencia/sanjeronimo.jpg" alt="Obra nueva en Residencia San Jerónimo">
+          <button class="toggle-btn" onclick="event.stopPropagation(); toggleExperienceFocus(event, this.closest('.experience-card'));">
+            Ver Detalles
+          </button>
+        </div>
+        <div class="experience-details">
+          <h1 class="sanjeronimo-title">Residencia San Jerónimo</h1>
+          <h2 class="obranueva">Obra nueva</h2>
+          <!-- Carousel para Residencia San Jerónimo -->
+          <div id="carouselSanJeronimo" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselSanJeronimo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselSanJeronimo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselSanJeronimo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images/experiencia/sanjeronimo.jpg" alt="Obra nueva">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/experiencia/sanjeronimo2.jpg" alt="Fachada de residencia San Jerónimo">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/experiencia/sanjeronimo3.jpg" alt="Proceso de construcción de residencia San Jerónimo">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSanJeronimo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSanJeronimo" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+          <p class="obra-nueva-text">Inmueble ubicado en la zona sur de la Ciudad de México.</p>
+          <h2 class="fachada">Fachada</h2>
+          <p class="fachada-text">Este inmueble es uno de 6 proyectos de mismas dimensiones.</p>
+          <h2 class="curso">En curso</h2>
+          <p class="curso-text">Seguimos desarrollando la última parte de la obra.</p>
+        </div>
+      </div>
+      
+    </div> <!-- Fin .experience-grid -->
+  </div> <!-- Fin .experience-container -->
+</section> <!-- Fin de la sección de Experiencia -->
+
+
+</main>
+
+  <!-- Footer -->
+  <footer class="footer-primary" id="contacto">
+
+    <div class="footer-container">
+      <div class="footer-content">
+        <!-- Sección de información de contacto -->
+        <div class="contact-info-section fade-up">
+          <div class="company-info-container">
+            <h2 class="fade-up">Contáctanos</h2>
+            <div class="contact-buttons">
+              <!-- Botón de llamada -->
+              <div class="contact-button fade-left">
+                <h3>¿Tienes dudas? Llámanos</h3>
+                <a href="tel:5537055255" class="btn btn-contact">
+                  <i class="fas fa-phone"></i>
+                  55 3705 5255
+                </a>
+              </div>
+
+              <!-- Botón de correo con opción de copia -->
+              <div class="contact-button">
+                <h3>Escríbenos</h3>
+                <a href="mailto:oficina_zafiro@outlook.com" class="btn btn-contact">
+                  <i class="fas fa-envelope"></i>
+                  Enviar correo
+                </a>
+                <div class="email-copy-container" onclick="copyEmail()">
+                  <span class="email-text">oficina_zafiro@outlook.com</span>
+                  <span class="copy-tooltip">Haz clic para copiar</span>
+                </div>
+              </div>
+
+              <!-- Botón para abrir modal -->
+              <div class="contact-button">
+                <h3>¿Deseas más información?</h3>
+                <button type="button" class="btn btn-contact" data-bs-toggle="modal" data-bs-target="#contactModal">
+                  <i class="fas fa-info-circle"></i>
+                  Solicitar información
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección del mapa (ahora fuera de contact-info-section) -->
+        <div class="map-section">
+          <h2>Ubicación</h2>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.7759918083093!2d-99.13628582410274!3d19.465222581821145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9108faef633%3A0x3d43b60cf84d1cd8!2sAv.%20R%C3%ADo%20Consulado%201500%2C%20Vallejo%2C%20Gustavo%20A.%20Madero%2C%2007870%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1742758470944!5m2!1ses!2smx"
+              allowfullscreen=""
+              loading="lazy"
+              title="Mapa"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./scripts/script2test.js"></script>
+  <script src="./scripts/animations.js"></script>
+  <script type="module" src="./scripts/Formularios/formulariocontacto.js"></script>
+  <script type="module" src="./scripts/Formularios/Login.js"></script>
+  <script type="module" src="./scripts/errorHandler.js"></script>
+
+  <!-- Agregar el modal justo antes del cierre del body -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Solicitar Información</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="contact-form" id="form-contacto">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="correo" required>
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="mensaje" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Error Box -->
+                <div id="error-message" class="alert alert-danger"></div>
+                
+                <form class="contact-form" id="form-login">
+                    <div class="mb-3">
+                        <label for="Usuario" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="Usuario" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Contraseña" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="Contraseña" required>
+                    </div>
+                    <div>
+                        <a class="registrar-link" href="./Formularios/nuevoUsuario.html">Registrarse</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

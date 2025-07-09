@@ -1,0 +1,555 @@
+{
+	"table": "categories",
+	"rows":
+	[
+		{
+			"Name": ""
+		},
+		{
+			"Name": "Abrazaderas para tubería"
+		},
+		{
+			"Name": "Acabados Decorativos"
+		},
+		{
+			"Name": "Acabados para Tablaroca"
+		},
+		{
+			"Name": "Accesorios Eléctricos"
+		},
+		{
+			"Name": "Accesorios para Herramientas Eléctricas"
+		},
+		{
+			"Name": "Aire Acondicionado"
+		},
+		{
+			"Name": "Alambre Galvanizado"
+		},
+		{
+			"Name": "Alambre Recocido"
+		},
+		{
+			"Name": "Albañileria"
+		},
+		{
+			"Name": "Albañileria / Construcción"
+		},
+		{
+			"Name": "Animales"
+		},
+		{
+			"Name": "Anticongelantes y Refrigerantes"
+		},
+		{
+			"Name": "Aplicadores de Pintura Manuales"
+		},
+		{
+			"Name": "Arneses de seguridad"
+		},
+		{
+			"Name": "Atomizadores"
+		},
+		{
+			"Name": "Automotriz"
+		},
+		{
+			"Name": "Baterías para Auto"
+		},
+		{
+			"Name": "Bombas"
+		},
+		{
+			"Name": "Bombas Sumergibles"
+		},
+		{
+			"Name": "Brocas"
+		},
+		{
+			"Name": "Brocas para Concreto"
+		},
+		{
+			"Name": "Brocas para Madera"
+		},
+		{
+			"Name": "Brocas para Metal"
+		},
+		{
+			"Name": "Brocas para Taladro Rotomartillo"
+		},
+		{
+			"Name": "Brocas para Vidrio y Cerámica"
+		},
+		{
+			"Name": "Brocas Planas / de Pala"
+		},
+		{
+			"Name": "Brochas"
+		},
+		{
+			"Name": "Cable uso Rudo"
+		},
+		{
+			"Name": "Cables de Acero"
+		},
+		{
+			"Name": "Cables uso general o Cables unipolares"
+		},
+		{
+			"Name": "Cables y Conectores"
+		},
+		{
+			"Name": "Cadenas de Acero"
+		},
+		{
+			"Name": "Cadenas y Cables"
+		},
+		{
+			"Name": "Canalizaciones eléctricas"
+		},
+		{
+			"Name": "Capacitores"
+		},
+		{
+			"Name": "Cartuchos de Gas"
+		},
+		{
+			"Name": "Cartuchos de Oxígeno"
+		},
+		{
+			"Name": "Cartuchos de Propileno"
+		},
+		{
+			"Name": "Cartuchos MAP-Pro"
+		},
+		{
+			"Name": "Cepillos Manuales"
+		},
+		{
+			"Name": "Cepillos para Preparación de Superficie"
+		},
+		{
+			"Name": "Ceras y Pulidores Automotrices "
+		},
+		{
+			"Name": "Charolas"
+		},
+		{
+			"Name": "Cinceles"
+		},
+		{
+			"Name": "Cinceles para Rotomartillo"
+		},
+		{
+			"Name": "Cintas"
+		},
+		{
+			"Name": "Cintas de Refuerzo"
+		},
+		{
+			"Name": "Cintas Especializadas"
+		},
+		{
+			"Name": "Codos"
+		},
+		{
+			"Name": "Combustible"
+		},
+		{
+			"Name": "Componentes Electrónicos"
+		},
+		{
+			"Name": "Conduit Flexible"
+		},
+		{
+			"Name": "Conduit Metálico"
+		},
+		{
+			"Name": "Conectores Macho"
+		},
+		{
+			"Name": "Conectores para Boiler"
+		},
+		{
+			"Name": "Conectores y Accesorios de Iluminación"
+		},
+		{
+			"Name": "Conexiones CPVC"
+		},
+		{
+			"Name": "Conexiones Flexibles"
+		},
+		{
+			"Name": "Conexiones Galvanizadas"
+		},
+		{
+			"Name": "Conexiones para Lavabo"
+		},
+		{
+			"Name": "Conexiones Plásticas"
+		},
+		{
+			"Name": "Conexiones PPR"
+		},
+		{
+			"Name": "Conexiones Tipo Tee"
+		},
+		{
+			"Name": "Contenedores y Envases"
+		},
+		{
+			"Name": "Control de Plagas"
+		},
+		{
+			"Name": "Controles y Accesorios para Climatización / Aires Acondicionados"
+		},
+		{
+			"Name": "Coples"
+		},
+		{
+			"Name": "Cuñas"
+		},
+		{
+			"Name": "Dados"
+		},
+		{
+			"Name": "Eléctrico "
+		},
+		{
+			"Name": "Eléctrico automotriz "
+		},
+		{
+			"Name": "Elementos de Sujeción o piezas estructurales ligeras."
+		},
+		{
+			"Name": "Empaque y Embalaje"
+		},
+		{
+			"Name": "Empaques y Sellos"
+		},
+		{
+			"Name": "Equipo de Seguridad / Protección"
+		},
+		{
+			"Name": "Equipos de Corte Eléctrico"
+		},
+		{
+			"Name": "Esmaltes Acrílicos en Aerosol"
+		},
+		{
+			"Name": "Esmaltes y Aerosoles"
+		},
+		{
+			"Name": "Extensiónes con dado"
+		},
+		{
+			"Name": "Extensiones Eléctricas"
+		},
+		{
+			"Name": "Ferretería"
+		},
+		{
+			"Name": "Fibras y Esponjas"
+		},
+		{
+			"Name": "Filtros Antisarro"
+		},
+		{
+			"Name": "Filtros y Tratamiento de Agua"
+		},
+		{
+			"Name": "Flejes Metálicos"
+		},
+		{
+			"Name": "Fluxómetros"
+		},
+		{
+			"Name": "Ganchos"
+		},
+		{
+			"Name": "Guantes"
+		},
+		{
+			"Name": "Guantes de Limpieza"
+		},
+		{
+			"Name": "Guantes Desechables"
+		},
+		{
+			"Name": "Guías jalacables"
+		},
+		{
+			"Name": "Herrajes para Portón"
+		},
+		{
+			"Name": "Herramientas Auxiliares para instalaciones eléctricas"
+		},
+		{
+			"Name": "Herramientas Auxiliares para la Contrucción / Albañileria"
+		},
+		{
+			"Name": "Herramientas de Corte Manual"
+		},
+		{
+			"Name": "Herramientas de Excavación Manuales"
+		},
+		{
+			"Name": "Herramientas de Golpe Manuales"
+		},
+		{
+			"Name": "Herramientas de Limpieza"
+		},
+		{
+			"Name": "Herramientas de Mano"
+		},
+		{
+			"Name": "Herramientas de mezcla"
+		},
+		{
+			"Name": "Herramientas de Nivelación"
+		},
+		{
+			"Name": "Herramientas de Sujeción y Elevación"
+		},
+		{
+			"Name": "Herramientas Eléctricas"
+		},
+		{
+			"Name": "Herramientas para acabados"
+		},
+		{
+			"Name": "Herramientas para Manualidades"
+		},
+		{
+			"Name": "Herramientas y Accesorios para Pintar"
+		},
+		{
+			"Name": "Hidrolavadoras / Equipos de Limpieza a Presión"
+		},
+		{
+			"Name": "Hilos y Cuerdas"
+		},
+		{
+			"Name": "Hilos y Cuerdas para Trazado"
+		},
+		{
+			"Name": "Impermeabilizantes"
+		},
+		{
+			"Name": "Insecticidas en Aerosol"
+		},
+		{
+			"Name": "Interruptores de Seguridad"
+		},
+		{
+			"Name": "Interruptores/ Breakers Termomagnéticos"
+		},
+		{
+			"Name": "Lentes de Seguridad"
+		},
+		{
+			"Name": "Limpiadores de Tapicería y Alfombra"
+		},
+		{
+			"Name": "Limpiadores Multiusos"
+		},
+		{
+			"Name": "Limpiadores para Cuero"
+		},
+		{
+			"Name": "Limpieza y Cuidado del Hogar"
+		},
+		{
+			"Name": "Linternas / Iluminación portátil"
+		},
+		{
+			"Name": "Líquido para Dirección Hidráulica"
+		},
+		{
+			"Name": "Llaves combinadas (Mixta)"
+		},
+		{
+			"Name": "Llaves Dobles Fijas"
+		},
+		{
+			"Name": "Llaves Españolas"
+		},
+		{
+			"Name": "Llaves Inglesas"
+		},
+		{
+			"Name": "Llaves Temporizadas"
+		},
+		{
+			"Name": "Llaves y Válvulas"
+		},
+		{
+			"Name": "Lubricantes en Aerosol"
+		},
+		{
+			"Name": "Lubricantes y Aceites"
+		},
+		{
+			"Name": "Mango de trinquete (matraca)"
+		},
+		{
+			"Name": "Mangos y Empuñaduras"
+		},
+		{
+			"Name": "Mantenimiento Automotriz"
+		},
+		{
+			"Name": "Martillos Rotomartillos"
+		},
+		{
+			"Name": "Material Eléctrico"
+		},
+		{
+			"Name": "Materiales de Aislamiento Térmico"
+		},
+		{
+			"Name": "Materiales de Construcción"
+		},
+		{
+			"Name": "Metales y Aceros"
+		},
+		{
+			"Name": "Mezcladoras"
+		},
+		{
+			"Name": "Niples"
+		},
+		{
+			"Name": "nueva"
+		},
+		{
+			"Name": "Papelería"
+		},
+		{
+			"Name": "Película Stretch"
+		},
+		{
+			"Name": "Picos y Rastrillos"
+		},
+		{
+			"Name": "Pinturas y Recubrimientos"
+		},
+		{
+			"Name": "Pistolas de Silicón"
+		},
+		{
+			"Name": "Placas Metálicas"
+		},
+		{
+			"Name": "Plomería"
+		},
+		{
+			"Name": "Productos de Limpieza Industrial"
+		},
+		{
+			"Name": "prueba"
+		},
+		{
+			"Name": "Prueba 2"
+		},
+		{
+			"Name": "Reducciones"
+		},
+		{
+			"Name": "Refacciones para Fluxómetros"
+		},
+		{
+			"Name": "Refacciones para Fluxómetros"
+		},
+		{
+			"Name": "Refrigerante R-134a"
+		},
+		{
+			"Name": "Refrigerantes y Gases Técnicos"
+		},
+		{
+			"Name": "Respiradores / Máscaras"
+		},
+		{
+			"Name": "Rótulas y Terminales"
+		},
+		{
+			"Name": "Ruedas y Rodamientos"
+		},
+		{
+			"Name": "Seguetas"
+		},
+		{
+			"Name": "Selladores para Llantas"
+		},
+		{
+			"Name": "Selladores y Adhesivos"
+		},
+		{
+			"Name": "Separadores para Loseta"
+		},
+		{
+			"Name": "Silicones de Alta Temperatura"
+		},
+		{
+			"Name": "Sin Categoría"
+		},
+		{
+			"Name": "Sistema de Dirección"
+		},
+		{
+			"Name": "Soportes Metálicos para Repisas / Ménsulas"
+		},
+		{
+			"Name": "Soportes para Luminarias"
+		},
+		{
+			"Name": "Suspensión y Dirección"
+		},
+		{
+			"Name": "Tapas Ciegas"
+		},
+		{
+			"Name": "Tapones"
+		},
+		{
+			"Name": "Tornillería"
+		},
+		{
+			"Name": "Tornillería y Sujeción"
+		},
+		{
+			"Name": "Tornillos Autoperforantes"
+		},
+		{
+			"Name": "Trilés y Tornillos de Fijación"
+		},
+		{
+			"Name": "Tronzadoras"
+		},
+		{
+			"Name": "Tubería Polipropileno Random (PPR)"
+		},
+		{
+			"Name": "Válvulas"
+		},
+		{
+			"Name": "Válvulas de Globo"
+		},
+		{
+			"Name": "Válvulas Metálicas"
+		},
+		{
+			"Name": "Válvulas Plásticas"
+		},
+		{
+			"Name": "Ventilación y Calefacción"
+		},
+		{
+			"Name": "Viniles Adhesivos"
+		},
+		{
+			"Name": "Zócalos para Tubos T8"
+		}
+	]
+}
