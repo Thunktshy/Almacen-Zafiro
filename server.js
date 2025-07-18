@@ -1,7 +1,7 @@
 // =============================
 // Imports & Environment Setup
 // =============================
-require('dotenv').config(); // Load .env variables
+require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
@@ -19,11 +19,10 @@ const fs = require('fs').promises;
 // Database Configuration
 // =============================
 const config = {
-    host: process.env.DB_HOST || 'localhost',
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'Ricardoydiego1', // Use a secure password or store it in .env
-    database: process.env.DB_NAME || 'tiendaonline',
-    connectionLimit: 5,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     acquireTimeout: 300
 };
 
@@ -589,11 +588,9 @@ const PORT = process.env.PORT || 4000;
 // Start the server and bind to all IPv4 network interfaces (0.0.0.0).
 // Binding to 0.0.0.0 rather than 'localhost' (127.0.0.1) makes the app reachable
 // from other devices on your LAN (e.g. your Android phone).
-app.listen(PORT, '0.0.0.0', () => {
-  // This callback runs once the server is up and listening.
-  // We log the actual address so you can verify it’s listening on 0.0.0.0:<PORT>.
-  console.log(`Server is running and listening on all network interfaces at port ${PORT}`);
-});
+app.listen(PORT, '127.0.0.1', () => 
+  console.log(`Almacen-Zafiro listening on http://127.0.0.1:${PORT}`)
+);
 
 
 // 1) Protect the entire `Protected` folder
