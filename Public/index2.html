@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zafiro Home - Página Principal</title>
+  <!-- Font Awesome -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  >
+  <!-- en <head> -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-text-light: rgb(255, 255, 255);
+      --color-primary: rgb(45,71,120); 
+      --color-secondary: rgb(100,140,188);
+      --max-width-container: 1200px;
+      --spacing-standard: 1rem;
+      --borderradius: 20px;
+      --font-heading: 'Poppins', sans-serif;
+      --font-body:    'Open Sans', sans-serif;
+      --color-bg:         #f9f9f9;
+      --color-text:       #333333;
+      --color-primary:    rgb(45,71,120);
+      --color-secondary:  rgb(100,140,188);
+      --color-accent:     #f08a5d;
+      --color-light-bg:   #ffffff;
+      --border-radius:    12px;
+      --spacing:          1rem;
+      --transition-fast:  0.3s ease;
+    }
+
+    *, *::before, *::after {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    h1,h2,h3,h4,h5 {
+      font-family: var(--font-heading);
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    a:hover {
+      color: var(--color-secondary);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      border: none;
+      border-radius: var(--border-radius);
+      background: var(--color-primary);
+      color: var(--color-light-bg);
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+    .btn:hover {
+      background: var(--color-secondary);
+      transform: translateY(-2px);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: .5rem;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(240,138,93,0.25);
+    }
+
+
+
+    /* ========================
+       Banner superior
+    ========================== */
+    .top-banner {
+      background-color: #a5230c;           /* Color de fondo (tomate) */
+      color: var(--color-text-light);      /* Texto blanco */
+      text-align: center;                  /* Centrado */
+      font-size: 1.3rem;                   /* Tamaño de fuente */
+      font-weight: bold;
+    }
+
+    /* ========================
+       Navbar
+    ========================== */
+    .navbarcontainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0.5rem 1rem;
+      background-color: var(--color-primary);
+      color: var(--color-text-light);
+
+      min-height: 80px;
+      gap: var(--spacing-standard);
+    }
+
+    @media (min-width: 768px) {
+      .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+      }
+      .navbar-toggler {
+        display: none;
+      }
+    }
+
+    .navbar-store-title {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: var(--spacing-standard);
+      color: var(--color-text-light) !important;
+      font-family: "Arial", sans-serif;
+      font-size: 2rem;
+    }
+
+    .navbar-search {
+      display: flex;
+      flex: 1;
+      max-width: 500px;
+      margin: 0 1rem;
+    }
+
+    .search-form {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: .25rem 0 0 .25rem;
+      outline: none;
+      width: 200px;
+    }
+
+    .btn-seacrh {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-left: none;
+      background: #fff;
+      border-radius: 0 .25rem .25rem 0;
+      cursor: pointer;
+    }
+
+    .navbarshopingicon {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-left: 20px;
+      padding: 0
+    }
+    .navbarshopingicon .nav-item + .nav-item {
+      margin-left: 2rem;
+    }
+    .nav-cart-icon, .nav-iniciar-sesion {
+      color: var(--color-text-light) !important;
+      text-decoration: none !important;
+      font-family: "Arial", sans-serif;
+      font-size: 15px;
+      gap: var(--spacing-standard);
+    }
+        /* ==============================
+      Banner de características
+      ============================== */
+    .info-banner-wrapper {
+      background-color: #f4f4f4;
+      padding: 1rem 0;
+    }
+
+    .info-banner-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;            
+      align-items: flex-start; 
+      gap: calc(var(--spacing-standard) + 20px);
+      max-width: var(--max-width-container);
+      margin: 0 auto;                   
+      padding: 0 var(--spacing-standard);
+    }
+
+
+    .info-banner-item {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-standard);
+      padding: 0 1rem;
+    }
+
+    .info-banner-item + .info-banner-item {
+      border-left: 1px solid #ccc;
+    }
+
+    .info-banner-icon {
+      font-size: 2rem;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .partpredictor-logo {
+      width: auto;
+    }
+
+    .info-banner-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-banner-text strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .info-banner-text span {
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    /* ==============================
+   Sección “Las Mejores Ofertas”
+   ============================== */
+    .ofertas-section {
+      padding: 2rem 2rem;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .ofertas-container {
+      max-width: var(--max-width-container);
+      margin: 0 auto;
+      padding: 0 var(--spacing-standard);
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      color: var(--color-primary);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      border-bottom: 4px solid var(--color-primary);
+    }
+
+    .ofertas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-standard);
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    /* Tarjeta de Oferta */
+    .offer-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      flex: 1 1 300px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .offer-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Imagen de la Oferta */
+    .offer-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Detalles debajo de la imagen */
+    .offer-details {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Título y precio */
+    .offer-title {
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .offer-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: var(--color-secondary);
+    }
+
+    /* Botón de compra */
+    .btn-buy {
+      margin-top: auto;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: var(--border-radius);
+      background: var(--color-primary);
+      color: var(--color-text-light);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-buy:hover {
+      background: var(--color-secondary);
+      transform: translateY(-2px);
+    }
+
+    /* ==============================
+   Sección de Filtros (gris)
+   ============================== */
+    .filters-section {
+      background-color: #f4f4f4;
+      padding-left: var(--spacing-standard);
+      padding-right: var(--spacing-standard);
+    }
+
+    .products-container {
+      max-width: var(--max-width-container);
+      margin: 0 auto;
+    }
+
+    .admin-header h1 {
+      font-size: 2rem;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Controles de Filtro */
+    #filterControls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-standard);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+      flex: 1 1 180px;
+    }
+
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--color-text);
+    }
+
+    .form-control,
+    .form-select {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      font-family: inherit;
+    }
+
+    /* Ajustes responsive */
+    @media (max-width: 576px) {
+      #filterControls {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .filter-group {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body class="page-body">
+
+  <!-- Banner superior -->
+  <div class="top-banner">
+    Increibles descuentos de hasta el 50% !!!!
+  </div>
+
+  <!-- =========================
+       Header / Navbar
+       ============================== -->
+  <nav class="navbar">
+    <div class="navbarcontainer">
+      <!-- Logo y marca -->
+      <a class="navbar-store-title" href="#">
+        <img src="./images/logo.png" alt="Zafiro Home" height="40" class="me-2">
+        <span>Zafiro Home</span>
+      </a>
+
+      <!-- Botón para móvil -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+          aria-label="Mostrar menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú colapsable -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+
+        <!-- Barra de búsqueda -->
+        <form class="navbar-search" action="/search" method="get" role="search">
+          <input class="search-form" type="search" name="q" placeholder="Buscar productos…" aria-label="Buscar">
+          <button class="btn-seacrh" type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <!-- Iconos carrito y login -->
+        <ul class="navbarshopingicon">
+          <li class="nav-item">
+            <a class="nav-cart-icon" href="/cart" aria-label="Carrito de Compras">
+              <i class="fa-solid fa-basket-shopping fa-lg"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-iniciar-sesion" data-bs-toggle="modal" data-bs-target="#loginmodal">Iniciar sesión</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- ==============================
+     Banner de características
+     ============================== -->
+  <div class="info-banner-wrapper">
+    <div class="info-banner-container">
+      <!-- Envío fijo -->
+      <div class="info-banner-item">
+        <i class="fas fa-truck info-banner-icon"></i>
+        <div class="info-banner-text">
+          <strong>¡Tarifa fija de envío a todo México $49.99!</strong>
+          <span>Incluye transporte y todos los costos de liberación de aduanas.</span>
+        </div>
+      </div>
+      <!-- Soporte en Español -->
+      <div class="info-banner-item">
+        <i class="fas fa-headset info-banner-icon"></i>
+        <div class="info-banner-text">
+          <strong>¡Estamos listos para ayudarle!</strong>
+          <span>La ayuda que necesitas en Español con uno de nuestros expertos</span>
+        </div>
+      </div>
+      <!--  -->
+      <div class="info-banner-item">
+        <i class="fas fa-desktop info-banner-icon"></i>
+        <div class="info-banner-text">
+          <strong>¡Soporte 24/7!</strong>
+          <span>¡siempre a tu lado!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Ofertas -->
+  <section id="ofertas" class="ofertas-section">
+    <div class="ofertas-container">
+      <h2 class="section-title">Las Mejores Ofertas</h2>
+      <div class="ofertas-grid">
+        
+        <!-- Oferta 1 -->
+        <div class="offer-card">
+          <img 
+            class="offer-image" 
+            src="ruta/a/imagen-producto1.jpg" 
+            alt="Producto 1"
+          >
+          <div class="offer-details">
+            <h3 class="offer-title">Nombre Producto 1</h3>
+            <p class="offer-price">$19.99</p>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+
+        <!-- Oferta 2 -->
+        <div class="offer-card">
+          <img 
+            class="offer-image" 
+            src="ruta/a/imagen-producto2.jpg" 
+            alt="Producto 2"
+          >
+          <div class="offer-details">
+            <h3 class="offer-title">Nombre Producto 2</h3>
+            <p class="offer-price">$29.99</p>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+
+        <!-- Oferta 3 -->
+        <div class="offer-card">
+          <img 
+            class="offer-image" 
+            src="ruta/a/imagen-producto3.jpg" 
+            alt="Producto 3"
+          >
+          <div class="offer-details">
+            <h3 class="offer-title">Nombre Producto 3</h3>
+            <p class="offer-price">$39.99</p>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+
+      </div> <!-- /.ofertas-grid -->
+    </div> <!-- /.ofertas-container -->
+  </section>
+
+  <!-- Sección Filtros de Productos -->
+  <section class="filters-section">
+    <div class="products-container">
+      <!-- Controles de Filtro -->
+      <div id="filterControls" class="mb-4 text-center">
+
+        <!-- Filtrar por Marca -->
+        <div class="filter-group">
+          <label for="brandFilter" class="form-label">Nuestras Marcas</label>
+          <select id="brandFilter" class="form-select">
+            <option value="">Selecciona una marca</option>
+          </select>
+        </div>
+        <!-- Filtrar por Categoría -->
+        <div class="filter-group">
+          <label for="categoryFilter" class="form-label">Filtrar por Categoría</label>
+          <select id="categoryFilter" class="form-select">
+            <option value="">Selecciona una categoría</option>
+          </select>
+        </div>
+        <!-- Filtrar por Repisa -->
+        <div class="filter-group">
+          <label for="shelfFilter" class="form-label">Filtrar por Repisa</label>
+          <select id="shelfFilter" class="form-select">
+            <option value="">Selecciona una repisa</option>
+          </select>
+        </div>
+        <!-- Filtrar por Unidad -->
+        <div class="filter-group">
+          <label for="unitFilter" class="form-label">Filtrar por Unidad</label>
+          <select id="unitFilter" class="form-select">
+            <option value="">Selecciona una unidad</option>
+          </select>
+        </div>
+        <!-- Filtrar por Tamaño -->
+        <div class="filter-group">
+          <label for="dimensionFilter" class="form-label">Filtrar por Tamaño</label>
+          <select id="dimensionFilter" class="form-select">
+            <option value="">Selecciona un tamaño</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/ayuda">Ayuda</a>
+      <a href="/terminos">Términos y Condiciones</a>
+      <a href="/privacidad">Política de Privacidad</a>
+    </div>
+    <div class="social-media">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>© 2025 Mi E‑commerce. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

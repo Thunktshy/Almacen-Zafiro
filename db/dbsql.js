@@ -1,10 +1,10 @@
 const sql = require('mssql'); //Conector con Sql Server
 
 const config = {
-  user:     process.env.DB_USER     || 'tienda_user',
-  password: process.env.DB_PASSWORD || 'Str0ng_P@ssw0rd!',
-  server:   process.env.DB_HOST     || 'localhost',
-  database: process.env.DB_NAME     || 'tiendaonline',
+  user:     process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server:   process.env.DB_HOST,
+  database: process.env.DB_NAME,
   options: {
     encrypt: false,
     trustServerCertificate: true,
@@ -31,8 +31,8 @@ class DBConnector {
   }
 
   //Ejecución de querys con parametros
-  async execute(sqlText, params = {}) {
-    if (typeof sqlText !== 'string') {
+  async querywithparams(sqlQuery, params = {}) {
+    if (typeof sqlQuery !== 'string') {
       throw new TypeError('El SQL debe ser un string');
     }
     await this.poolReady;
@@ -46,7 +46,7 @@ class DBConnector {
         !spec.type ||
         (!Object.prototype.hasOwnProperty.call(spec, 'value'))
       ) {
-        throw new TypeError(`Se intentó ingresar un parametro inválido para "${name}"`);
+        throw new TypeError('Se intentó ingresar un parametro inválido para "${name}"');
       }
       req.input(name, spec.type, spec.value);
     }

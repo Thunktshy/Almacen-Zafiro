@@ -252,7 +252,7 @@ app.get('/admin', requireLogin, (req, res) => {
         headers: {
             'Cache-Control': 'no-store'
         }
-    };
+    });
 });
 
 // API routes
